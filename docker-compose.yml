@@ -1,0 +1,12 @@
+version: "3"
+services:
+  factory-app:
+    image: mehmetnuridemircan/factory-app:latest
+    network_mode: bridge
+    container_name: factory-app
+    expose:
+      - 8888
+    ports:
+      - 8888:8888
+    restart: unless-stopped
+    command: mvn spring-boot:run
