@@ -2,6 +2,7 @@ package com.car.factory.service.factory;
 
 import com.car.factory.model.enums.CarType;
 import com.car.factory.service.CabrioService;
+import com.car.factory.service.HatchbackService;
 import com.car.factory.service.SedanService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,6 +24,9 @@ public class CarFactoryTest {
     @Mock
     private SedanService sedanService;
 
+    @Mock
+    private HatchbackService hatchbackService;
+
     @Test
     public void it_should_return_cabrio_service_when_car_type_is_cabrio() {
         // When
@@ -39,5 +43,14 @@ public class CarFactoryTest {
 
         // Then
         assertThat(carService).isInstanceOf(sedanService.getClass());
+    }
+
+    @Test
+    public void it_should_return_hatchback_service_when_car_type_is_hatchback() {
+        // When
+        CarService carService = carFactory.handle(CarType.HATCHBACK);
+
+        // Then
+        assertThat(carService).isInstanceOf(hatchbackService.getClass());
     }
 }
