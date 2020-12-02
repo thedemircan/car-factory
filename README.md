@@ -10,7 +10,7 @@
 
 ### Valid car types
 
-* CABRIO, SEDAN
+* CABRIO, SEDAN, HATCHBACK
 
 ### URLs
 
